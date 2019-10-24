@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { Button, Input,  Row, Col } from 'antd';
+import "antd/dist/antd.css";
 
 export default class TodoInput extends Component {
   state = {
@@ -16,10 +18,15 @@ export default class TodoInput extends Component {
 
   render() {
     return (
-      <div className="todo-input" >
-        <input type="text" value={this.state.inputValue} onChange={this.handleInputChange} />
-        <button onClick={this.dispatch}>add</button>
-      </div>
+        <div>
+          <Row>
+            <Col span={12}>
+              <Input value={this.state.inputValue} onChange={this.handleInputChange} />
+              <Button type="primary" onClick={this.dispatch}>add</Button>
+            </Col>
+          </Row>
+        </div>
+
     )
   }
 }

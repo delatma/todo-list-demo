@@ -12,6 +12,7 @@ export default class TodoItem extends Component {
     e && e.preventDefault();
     const { status } = this.state;
     const isCompleted = status === 'completed' ;
+    console.log("todoItem props", {...this.props.todo, status: isCompleted ? 'active' : 'completed'});
     this.props.onChange({...this.props.todo, status: isCompleted ? 'active': 'completed'});
     this.setState({status: isCompleted ? 'active': 'completed'})
   };
